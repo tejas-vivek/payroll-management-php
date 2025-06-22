@@ -3,7 +3,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Designed & Developed by Tejas Helwatkar</a> 2024</p>
+                <p>Designed & Developed by Tejas Helwatkar</p>
             </div>
         </div>
         <!--**********************************
