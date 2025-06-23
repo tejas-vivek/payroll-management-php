@@ -10,7 +10,7 @@
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.php">Home 1</a></li>
+                            <li><a href="http://localhost:8080/payroll/dashboard.php">Home 1</a></li>
                             <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                         </ul>
                     </li>
@@ -23,7 +23,15 @@
                            
                         </ul>
                     </li>
-  
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Settings</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="http://localhost:8080/payroll/modules/users/index.php">Users</a></li>
+                           
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
