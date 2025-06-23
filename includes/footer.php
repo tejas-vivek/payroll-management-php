@@ -45,6 +45,11 @@
 
     <script src="http://localhost:8080/payroll/js/dashboard/dashboard-1.js"></script>
 
+    <script>
+        $.noConflict();
+        new DataTable('#example');
+    </script>
+
 </body>
 
 </html>

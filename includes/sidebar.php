@@ -25,7 +25,7 @@
                     </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Settings</span>
+                            <i class="fa fa-cog" aria-hidden="true"></i><span class="nav-text">Settings</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="http://localhost:8080/payroll/modules/users/index.php">Users</a></li>
