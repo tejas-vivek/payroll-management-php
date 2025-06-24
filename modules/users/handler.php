@@ -12,6 +12,12 @@
                 'username' => $_POST['username'],
                 'email' => $_POST['email'],
             ];
+
+            if($tableOperations->checkDuplicate($conditions, null, 'OR')){
+                echo json_encode(['success' => false, 'message'=> 'User already exists']);
+                exit;
+            }
+
             $data = [
                 'name' => $_POST['name'],
                 'username' => $_POST['username'],
@@ -28,7 +34,12 @@
                 'username' => $_POST['username'],
                 'email' => $_POST['email'],
             ];
-            
+
+            if($tableOperations->checkDuplicate($conditions, $id, 'OR')){
+                echo json_encode(['success' => false, 'message'=> 'User already exists']);
+                exit;
+            }
+
             $data = [
                 'name' => $_POST['name'],
                 'username' => $_POST['username'],

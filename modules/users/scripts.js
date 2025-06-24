@@ -42,7 +42,7 @@ $(document).ready(function(){
                 alert("Record updated successfully");
                 location.reload();
             } else {
-                alert('Failed to update record');
+                alert(response.message);
             }
         })
     })
@@ -93,7 +93,7 @@ $(document).ready(function(){
                 alert("Record added successfully");
                 location.reload();
             } else {
-                alert('Failed to add record');
+                alert(response.message);
             }
         })
     })
