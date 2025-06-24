@@ -9,6 +9,7 @@ include('../../includes/sidebar.php');
             Content body start
         ***********************************-->
         <div class="content-body">
+            <?php include('../../includes/navbar.php'); ?>
             <div class="container card" style="padding: 15px; margin-top:15px;">
                 <div class="row">
                     <div>
@@ -69,6 +70,7 @@ include('../../includes/sidebar.php');
             <table id="example" class="display">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Name</th>
                         <th>Username</th>
                         <th>Email</th>
@@ -88,6 +90,7 @@ include('../../includes/sidebar.php');
                 ?>
                 
             <tr>
+                <td><?php echo $row['id']; ?></td>
                 <td><?php echo $row['name'];?></td>
                 <td><?php echo $row['username']?></td>
                 <td><?php echo $row['email']?></td>
@@ -191,6 +194,7 @@ include('../../includes/sidebar.php');
         </tbody>
         <tfoot>
             <tr>
+                <th>Id</th>
                 <th>Name</th>
                 <th>Username</th>
                 <th>Email</th>

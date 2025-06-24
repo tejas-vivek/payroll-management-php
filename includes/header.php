@@ -27,7 +27,7 @@
                     <b class="logo-abbr"><img src="http://localhost:8080/payroll/images/logo.png" alt=""> </b>
                     <!-- <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span> -->
                     <span class="brand-title">
-                        <p style="color: white"><b>Payroll</b></p>
+                        <p style="color: white"><b>Payroll Management</b></p>
                     </span>
                 </a>
             </div>
@@ -49,15 +49,15 @@
                 </div>
                 <div class="header-left">
                     <div class="input-group icons">
-                        <div class="input-group-prepend">
+                        <!-- <div class="input-group-prepend">
                             <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
-                        </div>
-                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
-                        <div class="drop-down animated flipInX d-md-none">
+                        </div> -->
+                        <!-- <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard"> -->
+                        <!-- <div class="drop-down animated flipInX d-md-none">
                             <form action="#">
                                 <input type="text" class="form-control" placeholder="Search">
                             </form>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="header-right">
