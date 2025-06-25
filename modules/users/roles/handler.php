@@ -19,6 +19,7 @@
 
             $data = [
                 'role' => $_POST['role'],
+                'module_id' => json_encode($_POST['modules']),
             ];
             $result = $tableOperations->add($data);
             break;
@@ -36,8 +37,10 @@
 
             $data = [
                 'role' => $_POST['role'],
+                'module_id'=>json_encode($_POST['modules'])
             ];
-            $result = $tableOperations->update($id, $data);
+            $tableOperations->update($id, $data);
+            $result = true;
             break;
         case 'change_password':
             $id = $_POST['id'];

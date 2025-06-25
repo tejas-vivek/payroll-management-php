@@ -31,6 +31,19 @@ include('../../includes/sidebar.php');
                                                 <label>Role Name</label>
                                                 <input type="text" name="role" class="form-control">
                                             </div>
+                                            <div class="form-group">
+                                                <label>Modules</label>
+                                                <select class="js-example-basic-multiple form-control" name="modules[]" multiple="multiple" style="width:100%">
+                                                    <?php 
+                                                        $sql= "select * from modules";
+                                                        $run = mysqli_query($conn,$sql);
+                                                        while($row = mysqli_fetch_array($run)){
+
+                                                    ?>
+                                                    <option value="<?php echo $row['id'];?>"><?php echo $row['label'];?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
                                             
                                             
                                             <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i>Save changes</button>
@@ -65,7 +78,18 @@ include('../../includes/sidebar.php');
             <tr>
                 <td><?php echo $row['id']?></td>
                 <td><?php echo $row['role']?></td>
-                <td></td>
+                <td>
+                    <?php 
+                        if(!empty($row['module_id'])){
+                            $module_ids = json_decode($row['module_id']);
+                            $ids = implode(',', array_map('intval', $module_ids));
+                            $badge_sql = mysqli_query($conn, "SELECT label FROM modules WHERE id IN ($ids)");
+                            while($badge_row = mysqli_fetch_array($badge_sql)){
+                                echo '<span class="badge badge-pill badge-primary">'.$badge_row['label'].'</span>';
+                            }
+                        }
+                    ?>
+                </td>
                 <td>
                     <button class="btn btn-primary" aria-hidden="true" data-toggle="modal" data-target="#editModal<?php echo $row['id']; ?>"><i class="fa fa-pencil-square-o"></i>Edit</button>
 
@@ -85,6 +109,30 @@ include('../../includes/sidebar.php');
                                             <div class="form-group">
                                                 <label>Role Name</label>
                                                 <input type="text" name="role" value="<?php echo $row['role']; ?>" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Modules</label>
+                                                <select class="js-example-basic-multiple form-control" name="modules[]" multiple="multiple" style="width:100%">
+                                                <?php 
+                                                    $selected_modules = [];
+                                                    if(!empty($row['module_id'])){
+                                                        $selected_modules = json_decode($row['module_id']);
+                                                    }
+                                                    $moduleSql= "select * from modules";
+                                                    $moduleRun = mysqli_query($conn,$moduleSql);
+                                                    while($moduleRow = mysqli_fetch_array($moduleRun)){
+
+                                                        $selected = in_array($moduleRow['id'], $selected_modules);
+
+                                                        if($selected){
+                                                            $selected="selected";
+                                                        } else {
+                                                            $selected= "";
+                                                        }
+                                                    ?>
+                                                    <option value="<?php echo $moduleRow['id'];?>" <?php echo $selected; ?>><?php echo $moduleRow['label'];?></option>
+                                                <?php } ?>
+                                                </select>
                                             </div>
                                             <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i>Update</button>
                                     </form>
@@ -118,6 +166,11 @@ include('../../includes/sidebar.php');
             Content body end
         ***********************************-->
         <script type="text/javascript" src="roles/scripts.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+            $('.js-example-basic-multiple').select2();
+            });
+        </script>
         
 <?php
 include('../../includes/footer.php');

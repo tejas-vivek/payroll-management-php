@@ -17,7 +17,7 @@ include('../../includes/sidebar.php');
                                 <h3 class="card-title text-white">Products Sold</h3>
                                 <div class="d-inline-block">
                                     <h2 class="text-white">4565</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
+                                    <p class="text-white mb-0">Jan - March 2024</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
                             </div>
@@ -29,7 +29,7 @@ include('../../includes/sidebar.php');
                                 <h3 class="card-title text-white">Net Profit</h3>
                                 <div class="d-inline-block">
                                     <h2 class="text-white">$ 8541</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
+                                    <p class="text-white mb-0">Jan - March 2024</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
                             </div>
@@ -38,10 +38,10 @@ include('../../includes/sidebar.php');
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-3">
                             <div class="card-body">
-                                <h3 class="card-title text-white">New Customers</h3>
+                                <h3 class="card-title text-white">New Customers </h3>
                                 <div class="d-inline-block">
                                     <h2 class="text-white">4565</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
+                                    <p class="text-white mb-0">Jan - March 2024</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
                             </div>
@@ -53,7 +53,7 @@ include('../../includes/sidebar.php');
                                 <h3 class="card-title text-white">Customer Satisfaction</h3>
                                 <div class="d-inline-block">
                                     <h2 class="text-white">99%</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
+                                    <p class="text-white mb-0">Jan - March 2024</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
                             </div>
@@ -86,13 +86,13 @@ include('../../includes/sidebar.php');
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between">
                                             <div class="w-100 mr-2">
-                                                <h6>Pixel 2</h6>
+                                                <h6>Pixel 8</h6>
                                                 <div class="progress" style="height: 6px">
                                                     <div class="progress-bar bg-danger" style="width: 40%"></div>
                                                 </div>
                                             </div>
                                             <div class="ml-2 w-100">
-                                                <h6>iPhone X</h6>
+                                                <h6>iPhone 15</h6>
                                                 <div class="progress" style="height: 6px">
                                                     <div class="progress-bar bg-primary" style="width: 80%"></div>
                                                 </div>

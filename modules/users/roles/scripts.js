@@ -34,7 +34,16 @@ $(document).ready(function(){
         var listAll = $(this).serializeArray();
         var formData = {};
         listAll.forEach(function(field){
-            formData[field.name] = field.value;
+            if(formData[field.name]){
+                if(Array.isArray(formData[field.name])){
+                    formData[field.name].push(field.value);
+                } else {
+                    formData[field.name] = [formData[field.name], field.value];
+                    // console.log("else part", formData[field.name]);
+                }
+            } else {
+                formData[field.name] = field.value;
+            }
         })
         sendAjaxRequest('update', formData, function(response){
             // console.log(response);
@@ -52,8 +61,20 @@ $(document).ready(function(){
         var listAll = $(this).serializeArray();
         var formData = {};
 
+        // listAll.forEach(function(field){
+        //     formData[field.name] = field.value;
+        // })
         listAll.forEach(function(field){
-            formData[field.name] = field.value;
+            if(formData[field.name]){
+                if(Array.isArray(formData[field.name])){
+                    formData[field.name].push(field.value);
+                } else {
+                    formData[field.name] = [formData[field.name], field.value];
+                    // console.log("else part", formData[field.name]);
+                }
+            } else {
+                formData[field.name] = field.value;
+            }
         })
         // console.log(formData);
         sendAjaxRequest('add', formData, function(response){

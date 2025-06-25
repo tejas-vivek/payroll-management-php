@@ -43,9 +43,15 @@ include('../../includes/sidebar.php');
                                                 <label>Role</label>
                                                 <select class="form-control" name="role">
                                                     <option selected disabled>Select Role</option>
-                                                    <option value="Admin">Admin</option>
-                                                    <option value="Manager">Manager</option>
-                                                    <option value="User">User</option>
+                                                        <?php 
+                                                            $sql = "select * from roles";
+                                                            $run = mysqli_query($conn, $sql);
+                                                            while($row = mysqli_fetch_array($run)){
+                                                        ?>
+                                                    <option value="<?php echo $row['id'];?>"><?php echo $row['role']; ?></option>
+                                                    <?php } ?>
+                                                    <!-- <option value="Manager">Manager</option>
+                                                    <option value="User">User</option> -->
                                                 </select>
                                             </div>
                                             <div class="form-group">
@@ -82,7 +88,7 @@ include('../../includes/sidebar.php');
                 </thead>
         <tbody>
             <?php 
-                $sql = "select * from admin";
+                $sql = "select am.created_on, am.name, am.username, am.email, am.id, am.status, rs.role, am.role as role_id from admin am left join roles rs on am.role = rs.id";
                 $run = mysqli_query($conn, $sql);
 
                 while($row = mysqli_fetch_array($run)){
@@ -162,10 +168,21 @@ include('../../includes/sidebar.php');
                                             <div class="form-group">
                                                 <label>Role</label>
                                                 <select class="form-control" name="role">
+                                                    <?php 
+                                                    $roleSql = "select * from roles";
+                                                    $roleRun = mysqli_query($conn, $roleSql);
+                                                    while($role = mysqli_fetch_array($roleRun)){
+                                                        $isSelected = "";
+                                                        if($role['id'] == $row['role_id']){
+                                                            $isSelected = "selected";
+                                                        }
+                                                    ?>
+                                                        <option value="<?php echo $role['id'];?>"<?php echo $isSelected; ?>><?php echo $role['role']; ?></option>
+                                                    <?php } ?>
                                                 
-                                                    <option <?php echo $row['role']=='Admin' ?'selected':''; ?> value="Admin">Admin</option>
+                                                    <!-- <option <?php echo $row['role']=='Admin' ?'selected':''; ?> value="Admin">Admin</option>
                                                     <option <?php echo $row['role']=='Manager' ?'selected':''; ?> value="Manager">Manager</option>
-                                                    <option <?php echo $row['role']=='User' ?'selected':''; ?> value="User">User</option>
+                                                    <option <?php echo $row['role']=='User' ?'selected':''; ?> value="User">User</option> -->
                                                 </select>
                                             </div>
                                             <div class="form-group">
